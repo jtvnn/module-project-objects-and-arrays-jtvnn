@@ -51,8 +51,13 @@
     // 🧠 Examples of usage:
     // deletePrice({ item: "Tesla Model 3", price: 40000 }) // should return { item: "Tesla Model 3" }
     // deletePrice({ item: "Kobo Libra 2" }) // should return { item: "Kobo Libra 2", priceless: true }
-    function deletePrice() {
-
+    function deletePrice(obj) {
+     if ('price' in obj) {
+      delete obj.price;
+     }  else  {
+      obj.priceless = true;
+     }
+     return obj;
     }
 
     // 👉 CHALLENGE 4
@@ -62,7 +67,11 @@
     // evenList(['a']) // should return false
     // evenList(['a', 'b']) // should return true
     function evenList(arr) {
-
+      if (arr.length % 2 === 0) {
+        return true;
+      } else {
+        return false;
+      }
     }
 
     // 👉 CHALLENGE 5
@@ -71,7 +80,12 @@
     // 🧠 Examples of usage:
     // firstOrLast(['a', 'b'], true) // should return 'a'
     // firstOrLast(['a', 'b'], false) // should return 'b'
-    function firstOrLast() {
+    function firstOrLast(arr, bool) {
+      if (bool === true) {
+        return arr[0];
+      } else if (bool === false) {
+        return arr.at(-1);
+      }
 
     }
 
@@ -81,8 +95,9 @@
     // 🧠 Examples of usage:
     // pushElement([], 1) // should return [1]
     // pushElement(['a', 'b'], 'c') // should return ['a', 'b', 'c']
-    function pushElement() {
-
+    function pushElement(arr, val) {
+      arr.push(val)
+      return arr;
     }
 
     // 👉 CHALLENGE 7
@@ -97,8 +112,8 @@
     // 🧠 At each iteration of the loop, if the current character is not "x", then add it to the end of the result array.
     // 🧠 You can merge the result array back into a string by using join. Example: ["f", "o", "o"].join("") yields "foo"
     // 🧠 Do not forget to return your rejoined string!
-    function stripX() {
-
+    function stripX(str) {
+      
     }
 
     // 👉 CHALLENGE 8
