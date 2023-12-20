@@ -132,8 +132,16 @@
     // ❗ Important Notes:
     // 🧠 Try to solve this problem without looking at how you solved the previous one.
     // 🧠 If you need to look, do not copy & paste code. Take a peek and then work from memory!
-    function stripChar() {
-      
+    function stripChar(str, char) {
+      let result = [];
+      let split = str.split("")
+      for (let idx in split) {
+        if (split[idx] !== char) {
+          result.push(split[idx]);
+        }
+      }
+      return result.join("");
+
     }
 
     // 👉 CHALLENGE 9
@@ -145,8 +153,14 @@
     // getProps({ lastName: "Smith", age: 35 }) // should return ["lastName"]
     // getProps({ firstName: "Jane", married: false }) // should return ["firstName"]
     // getProps({ name: "Bamby", favFood: "flowers" }) // should return ["name", "favFood"]
-    function getProps() {
-
+    function getProps(obj) {
+      let results = [];
+      for (let key in obj) {
+        if (obj.key !== 'age' || obj.key !== 'married') {
+          results.push(key)
+        }
+      }
+      return results; 
     }
 
     // 🧪 TESTS, do not work below this line
