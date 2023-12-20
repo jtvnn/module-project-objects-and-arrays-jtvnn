@@ -113,7 +113,14 @@
     // 🧠 You can merge the result array back into a string by using join. Example: ["f", "o", "o"].join("") yields "foo"
     // 🧠 Do not forget to return your rejoined string!
     function stripX(str) {
-      
+      let result = [];
+      let split = str.split("");
+      for (let idx in split) {
+        if (split[idx] !== 'x') {
+          result.push(split[idx]);
+        }
+      }
+      return result.join("");
     }
 
     // 👉 CHALLENGE 8
@@ -126,7 +133,7 @@
     // 🧠 Try to solve this problem without looking at how you solved the previous one.
     // 🧠 If you need to look, do not copy & paste code. Take a peek and then work from memory!
     function stripChar() {
-
+      
     }
 
     // 👉 CHALLENGE 9
