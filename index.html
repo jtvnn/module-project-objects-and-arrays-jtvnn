@@ -156,7 +156,7 @@
     function getProps(obj) {
       let results = [];
       for (let key in obj) {
-        if (obj.key !== 'age' || obj.key !== 'married') {
+        if (key !== 'age' && key !== 'married') {
           results.push(key)
         }
       }
